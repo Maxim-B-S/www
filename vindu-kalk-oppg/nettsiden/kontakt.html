@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-kontakt.css">
+    <title>Kontakt</title>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <h1>Kontakt</h1>
+            <img src="bilder/DyreVinduer-AS-Logo.png" alt="Dyre Vinduer AS Logo" class="logo">
+        </div>
+        <div class="container">
+            <ul class="style-list">
+                <li><a href="index.html">Hjemme Side</a></li>
+                <li><a href="om-meg.html">Om nettsiden</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="valgfri-side.html">Vindu Kalkulator</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <!--Content-->
+        <div class="sub-container">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <form onsubmit="sendEmail(); reset(); return false;">
+                        <h2 class="h2-contact">Kontakt meg</h2>
+                        <input type="text" class="field" placeholder="Navn" id="name" required>
+                        <input type="email" class="field" placeholder="E-post" id="email" required>
+                        <input type="text" class="field" placeholder="Telefon Nummer" required>
+                        <textarea class="field area" id="message" placeholder="Din Melding..."></textarea>
+                        <button class="contact-btn" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="kontakt-email.js"></script>
+    </div>
+</body>
+</html>

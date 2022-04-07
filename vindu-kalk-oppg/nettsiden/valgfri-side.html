@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kalk-info-style.css">
+    <script src="kalk-info-dropdown.js"></script>
+    <title>Kalkulator</title>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <h1>Vindu Kalkulator</h1>
+            <img src="bilder/DyreVinduer-AS-Logo.png" alt="Dyre Vinduer AS Logo" class="logo">
+        </div>
+        <div class="container">
+            <ul class="style-list">
+                <li><a href="index.html">Hjemme Side</a></li>
+                <li><a href="om-meg.html">Om nettsiden</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="valgfri-side.html">Vindu Kalkulator</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        <!--Content-->
+        <div class="sub-container">
+            <div class="calc-out-shell">
+                <div class="gamel-vindu-shell">
+                    <h2 class="calc-header-style">Nåværende Vindu</h2>
+                    <div class="dropdown">
+                        <div id="myDropdown1" class="dropdown-content">
+                            <p>Bredde av vindu: 
+                                Bredde er den horizontale lengden av vinduet.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction1()"></img>
+                        <input type="text" name="" id="" placeholder="Bredde">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown2" class="dropdown-content">
+                            <p>Høyde av vindu:
+                                Høyde er den vertikale lengden av vinduet.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction2()"></img>
+                        <input type="text" name="" id="" placeholder="Høyde">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown3" class="dropdown-content">
+                            <p>Antall vindu:
+                                Hvor mange vindu befinner deg seg totalt i huset ditt.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction3()"></img>
+                        <input type="text" name="" id="" placeholder="Antall">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown4" class="dropdown-content">
+                            <p>U-Verdi:
+                                U-verdien bestemmerhvor god den er til å holde inn varmen i vinduene, jo mindre u-verdi vinduet har jo bedre holder vinduene inn varmen. 
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction4()"></img>
+                        <input type="text" name="" id="" placeholder="U-verdi">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown5" class="dropdown-content">
+                            <p>Temperatur ute:
+                                Hvor kaldt eller varmt det er ute.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction5()"></img>
+                        <input type="text" name="" id="" placeholder="Temperatur ute">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown6" class="dropdown-content">
+                            <p>Temperatur inne:
+                                Hvor kaldt eller varmt det er inne i huset ditt.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction6()"></img>
+                        <input type="text" name="" id="" placeholder="Temperatur inne">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown7" class="dropdown-content">
+                            <p>Dagens strømpris:
+                                Hvor mye kilowatt i timen koster for deg.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction7()"></img>
+                        <input type="text" name="" id="" placeholder="Strømpris">
+                    </div>
+                    <div class="outer-button-style">
+                        <button class="inner-button-style">Regn ut</button>
+                    </div>
+                    <div class="display"></div>
+                </div>
+                <div class="ny-vindu-shell">
+                    <h2 class="calc-header-style">Nytt Vindu</h2>
+                    <div class="dropdown">
+                        <div id="myDropdown8" class="dropdown-content">
+                            <p>Bredde av vindu: 
+                                Bredde er den horizontale lengden av vinduet.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction8()"></img>
+                        <input type="text" name="" id="" placeholder="Bredde Ny">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown9" class="dropdown-content">
+                            <p>Høyde av vindu:
+                                Høyde er den vertikale lengden av vinduet.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction9()"></img>
+                        <input type="text" name="" id="" placeholder="Høyde Ny">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown10" class="dropdown-content">
+                            <p>Antall vindu:
+                                Hvor mange vindu befinner deg seg totalt i huset ditt.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction10()"></img>
+                        <input type="text" name="" id="" placeholder="Antall Ny">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown11" class="dropdown-content">
+                            <p>U-Verdi:
+                                U-verdien bestemmerhvor god den er til å holde inn varmen i vinduene, jo mindre u-verdi vinduet har jo bedre holder vinduene inn varmen. 
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction11()"></img>
+                        <input type="text" name="" id="" placeholder="U-verdi Ny">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown12" class="dropdown-content">
+                            <p>Temperatur ute:
+                                Hvor kaldt eller varmt det er ute.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction12()"></img>
+                        <input type="text" name="" id="" placeholder="Temperatur ute">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown13" class="dropdown-content">
+                            <p>Temperatur inne:
+                                Hvor kaldt eller varmt det er inne i huset ditt.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction13()"></img>
+                        <input type="text" name="" id="" placeholder="Temperatur inne">
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown14" class="dropdown-content">
+                            <p>Dagens strømpris:
+                                Hvor mye kilowatt i timen koster for deg.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction14()"></img>
+                        <input type="text" name="" id="" placeholder="Strømpris">
+                    </div>
+                    <div class="outer-button-style">
+                        <button class="inner-button-style">Regn ut</button>
+                    </div>
+                    <div class="display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
