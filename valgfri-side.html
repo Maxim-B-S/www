@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="kalk-info-style.css">
     <script src="kalk-info-dropdown.js"></script>
+    <script src="kalk.js"></script>
     <title>Kalkulator</title>
 </head>
 <body>
@@ -34,38 +35,38 @@
                     <div class="dropdown">
                         <div id="myDropdown1" class="dropdown-content">
                             <p>Bredde av vindu: 
-                                Bredde er den horizontale lengden av vinduet.
+                                Bredde er den horizontale lengden av vinduet. Her skriver du inn bredden i meter.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction1()"></img>
-                        <input type="text" name="" id="" placeholder="Bredde">
+                        <input type="number" name="" id="bredde" placeholder="Bredde" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown2" class="dropdown-content">
                             <p>Høyde av vindu:
-                                Høyde er den vertikale lengden av vinduet.
+                                Høyde er den vertikale lengden av vinduet. Her skriver du inn høyden i meter.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction2()"></img>
-                        <input type="text" name="" id="" placeholder="Høyde">
+                        <input type="number" name="" id="hoyde" placeholder="Høyde" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown3" class="dropdown-content">
                             <p>Antall vindu:
-                                Hvor mange vindu befinner deg seg totalt i huset ditt.
+                                Hvor mange vindu befinner det seg totalt i huset ditt.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction3()"></img>
-                        <input type="text" name="" id="" placeholder="Antall">
+                        <input type="number" name="" id="antall" placeholder="Antall" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown4" class="dropdown-content">
                             <p>U-Verdi:
-                                U-verdien bestemmerhvor god den er til å holde inn varmen i vinduene, jo mindre u-verdi vinduet har jo bedre holder vinduene inn varmen. 
+                                U-verdien bestemmerhvor god den er til å holde inn varmen i vinduene, jo mindre u-verdi vinduet har jo bedre holder vinduene inn varmen. NB: Skal du skrive et tall med desimaler, skriv med punktum istedenfor komma.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction4()"></img>
-                        <input type="text" name="" id="" placeholder="U-verdi">
+                        <input type="number" name="" id="uverdi" placeholder="U-verdi" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown5" class="dropdown-content">
@@ -74,7 +75,7 @@
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction5()"></img>
-                        <input type="text" name="" id="" placeholder="Temperatur ute">
+                        <input type="number" name="" id="uteTemp" placeholder="Temperatur ute" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown6" class="dropdown-content">
@@ -83,91 +84,123 @@
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction6()"></img>
-                        <input type="text" name="" id="" placeholder="Temperatur inne">
+                        <input type="number" name="" id="inneTemp" placeholder="Temperatur inne" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown7" class="dropdown-content">
-                            <p>Dagens strømpris:
-                                Hvor mye kilowatt i timen koster for deg.
+                            <p>Dager:
+                                Her skriver du inn antall dager du vildet vil koste deg for strømmen for vinduene.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction7()"></img>
-                        <input type="text" name="" id="" placeholder="Strømpris">
+                        <input type="number" name="" id="dager" placeholder="Antall dager" required>
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown8" class="dropdown-content">
+                            <p>Dagens strømpris:
+                                Hvor mye kilowatt i timen koster for deg. Her skriver du prisen i Kr. NB: Skal du skrive et tall med desimaler, skriv med punktum istedenfor komma.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction8()"></img>
+                        <input type="number" name="" id="pris" placeholder="Strømpris" required>
                     </div>
                     <div class="outer-button-style">
-                        <button class="inner-button-style">Regn ut</button>
+                        <button type="button" onclick="kalkGammel()" class="inner-button-style">Regn ut</button>
                     </div>
-                    <div class="display"></div>
+                    <div class="display">
+                        <h3>Kilo Watt Per Time:</h3>
+                        <span id="resultprisgammel"></span>
+                        <h3>Pris for kWh:</h3>
+                        <span id="resultwattgammel"></span>
+                        <h3>Pris for antall dager du velger:</h3>
+                        <span id="resultdagergammel"></span>
+                    </div>
                 </div>
                 <div class="ny-vindu-shell">
                     <h2 class="calc-header-style">Nytt Vindu</h2>
                     <div class="dropdown">
-                        <div id="myDropdown8" class="dropdown-content">
-                            <p>Bredde av vindu: 
-                                Bredde er den horizontale lengden av vinduet.
-                            </p>
-                        </div>
-                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction8()"></img>
-                        <input type="text" name="" id="" placeholder="Bredde Ny">
-                    </div>
-                    <div class="dropdown">
                         <div id="myDropdown9" class="dropdown-content">
-                            <p>Høyde av vindu:
-                                Høyde er den vertikale lengden av vinduet.
+                            <p>Bredde av vindu: 
+                                Bredde er den horizontale lengden av vinduet. Her skriver du inn bredden i meter.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction9()"></img>
-                        <input type="text" name="" id="" placeholder="Høyde Ny">
+                        <input type="number" name="" id="breddeNy" placeholder="Bredde Ny" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown10" class="dropdown-content">
-                            <p>Antall vindu:
-                                Hvor mange vindu befinner deg seg totalt i huset ditt.
+                            <p>Høyde av vindu:
+                                Høyde er den vertikale lengden av vinduet. Her skriver du inn høyden i meter.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction10()"></img>
-                        <input type="text" name="" id="" placeholder="Antall Ny">
+                        <input type="number" name="" id="hoydeNy" placeholder="Høyde Ny" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown11" class="dropdown-content">
-                            <p>U-Verdi:
-                                U-verdien bestemmerhvor god den er til å holde inn varmen i vinduene, jo mindre u-verdi vinduet har jo bedre holder vinduene inn varmen. 
+                            <p>Antall vindu:
+                                Hvor mange vindu befinner det seg totalt i huset ditt.
                             </p>
                         </div>
                         <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction11()"></img>
-                        <input type="text" name="" id="" placeholder="U-verdi Ny">
+                        <input type="number" name="" id="antallNy" placeholder="Antall Ny" required>
                     </div>
                     <div class="dropdown">
                         <div id="myDropdown12" class="dropdown-content">
+                            <p>U-Verdi:
+                                U-verdien bestemmerhvor god den er til å holde inn varmen i vinduene, jo mindre u-verdi vinduet har jo bedre holder vinduene inn varmen. NB: Skal du skrive et tall med desimaler, skriv med punktum istedenfor komma.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction12()"></img>
+                        <input type="number" name="" id="uverdiNy" placeholder="U-verdi Ny" required>
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown13" class="dropdown-content">
                             <p>Temperatur ute:
                                 Hvor kaldt eller varmt det er ute.
                             </p>
                         </div>
-                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction12()"></img>
-                        <input type="text" name="" id="" placeholder="Temperatur ute">
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction13()"></img>
+                        <input type="number" name="" id="uteTempNy" placeholder="Temperatur ute" required>
                     </div>
                     <div class="dropdown">
-                        <div id="myDropdown13" class="dropdown-content">
+                        <div id="myDropdown14" class="dropdown-content">
                             <p>Temperatur inne:
                                 Hvor kaldt eller varmt det er inne i huset ditt.
                             </p>
                         </div>
-                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction13()"></img>
-                        <input type="text" name="" id="" placeholder="Temperatur inne">
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction14()"></img>
+                        <input type="number" name="" id="inneTempNy" placeholder="Temperatur inne" required>
                     </div>
                     <div class="dropdown">
-                        <div id="myDropdown14" class="dropdown-content">
-                            <p>Dagens strømpris:
-                                Hvor mye kilowatt i timen koster for deg.
+                        <div id="myDropdown15" class="dropdown-content">
+                            <p>Dager:
+                                Her skriver du inn antall dager du vildet vil koste deg for strømmen for vinduene.
                             </p>
                         </div>
-                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction14()"></img>
-                        <input type="text" name="" id="" placeholder="Strømpris">
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction15()"></img>
+                        <input type="number" name="" id="dagerNy" placeholder="Antall dager" required>
+                    </div>
+                    <div class="dropdown">
+                        <div id="myDropdown16" class="dropdown-content">
+                            <p>Dagens strømpris:
+                                Hvor mye kilowatt i timen koster for deg. Her skriver du prisen i Kr. NB: Skal du skrive et tall med desimaler, skriv med punktum istedenfor komma.
+                            </p>
+                        </div>
+                        <img src="bilder/info-sign.png" alt="info logo av inputen" class="info-sign dropbtn" onclick="myFunction16()"></img>
+                        <input type="number" name="" id="prisNy" placeholder="Strømpris" required>
                     </div>
                     <div class="outer-button-style">
-                        <button class="inner-button-style">Regn ut</button>
+                        <button type="button" onclick="kalkNy()" class="inner-button-style">Regn ut</button>
                     </div>
-                    <div class="display"></div>
+                    <div class="display">
+                        <h3>Kilo Watt Per Time:</h3>
+                        <span id="resultprisny"></span>
+                        <h3>Pris for kWh:</h3>
+                        <span id="resultwattny"></span>
+                        <h3>Pris for antall dager du velger:</h3>
+                        <span id="resultdagerny"></span>
+                    </div>
                 </div>
             </div>
         </div>

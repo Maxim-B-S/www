@@ -56,6 +56,14 @@ function myFunction1() {
     document.getElementById("myDropdown14").classList.toggle("show");
   }
 
+  function myFunction15() {
+    document.getElementById("myDropdown15").classList.toggle("show");
+  }
+  
+  function myFunction16() {
+    document.getElementById("myDropdown16").classList.toggle("show");
+  }
+
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
